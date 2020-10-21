@@ -27,14 +27,27 @@ namespace LinkedList
             list.PopLast();
             list.Display();
 
-            //UC7
+            /*//UC7
             list.Append(54);
             list.Append(23);
             list.Display();
             Console.WriteLine("\nElement to be searched: ");
             int r = Convert.ToInt32(Console.ReadLine());
             if (list.Search(r))
-                Console.WriteLine("\nElement found at: " + list.Search(r));
+                Console.WriteLine("\nElement found");
+            else
+                Console.WriteLine("Element not in Linked List");
+*/
+            //UC8
+            list.Append(54);
+            list.Append(23);
+            list.Display();
+            Console.WriteLine("\nElement to be searched: ");
+            int s = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nElement to be inserted: ");
+            int i = Convert.ToInt32(Console.ReadLine());
+            if (list.SearchAndInsert(s,i)!=null)
+                list.Display();
             else
                 Console.WriteLine("Element not in Linked List");
         }

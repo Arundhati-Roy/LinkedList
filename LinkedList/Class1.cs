@@ -126,5 +126,21 @@ namespace LinkedList
             }
             return false ;
         }
+        internal Node SearchAndInsert(int value,int data)
+        {
+            Node head = top;
+            while (this.top != null)
+            {
+                if (head.data == value)
+                {
+                    Node node = new Node(data);
+                    node.next = head.next;
+                    head.next = node;
+                    return node;
+                }
+                head = head.next;
+            }
+            return null;
+        }
     }
 }
