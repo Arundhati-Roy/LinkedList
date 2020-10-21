@@ -100,5 +100,21 @@ namespace LinkedList
             Console.WriteLine("\n"+this.top.data + " is deleted from the linked list");
             this.top = this.top.next;
         }
+        internal void PopLast()
+        {
+            //Node temp = this.top;
+            if (this.top == null || this.top.next==null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            Node NewNode = this.top;
+            while(NewNode.next.next!=null)
+            {
+                Console.WriteLine("\n"+"Deleted element: " + NewNode.next.next.data);
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+        }
     }
 }

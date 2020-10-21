@@ -22,6 +22,10 @@ namespace LinkedList
             //UC5
             list.Pop();
             list.Display();
+
+            //UC6
+            list.PopLast();
+            list.Display();
         }
     }
 }
