@@ -14,6 +14,13 @@ namespace LinkedList
             list.Add(30);
             list.Add(56);
             list.Display();
+            Console.WriteLine("\n");
+
+            //UC3
+            list.Append(56);
+            list.Append(30);
+            list.Append(70);
+            list.Display();
             //Console.WriteLine("After insertion " + list.InsertAtGivenPos(2, 30));
             //list.Display();
 

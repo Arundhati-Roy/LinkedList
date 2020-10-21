@@ -30,6 +30,22 @@ namespace LinkedList
             this.top = node;
             Console.WriteLine("{0} is added into Linked list", node.data);
         }
+        internal void Append(int data)
+        {
+            Node node = new Node(data);
+            if (this.top == null)
+                this.top = node;
+            else
+            {
+                Node temp = top;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+            Console.WriteLine("{0} is appended into Linked list", node.data);
+        }
         internal void Display()
         {
             Node temp = this.top;
