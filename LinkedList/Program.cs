@@ -11,12 +11,16 @@ namespace LinkedList
 
             
             //UC4
-            list.Add(56);
-            list.Add(89);
-            list.Add(43);
+            list.Append(56);
+            list.Append(89);
+            list.Append(43);
             list.Display();
             Console.WriteLine("\nAfter insertion " );
             list.InsertAtGivenPos(2, 30);
+            list.Display();
+
+            //UC5
+            list.Pop();
             list.Display();
         }
     }

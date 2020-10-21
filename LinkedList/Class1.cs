@@ -90,5 +90,15 @@ namespace LinkedList
             Console.WriteLine("Inserted value is: " + data);
             return top;
         }
+        internal void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            Console.WriteLine("\n"+this.top.data + " is deleted from the linked list");
+            this.top = this.top.next;
+        }
     }
 }
