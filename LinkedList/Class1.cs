@@ -61,5 +61,34 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+        internal Node InsertAtGivenPos(int pos, int data)
+        {
+            if (pos < 1)
+                Console.WriteLine("Invalid position");
+            if (pos == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.top;
+                top = newNode;
+            }
+            else
+            {
+                while (pos-- != 0)
+                {
+                    if (pos == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.top.next;
+                        top.next = node;
+                        break;
+                    }
+                    top = top.next;
+                }
+                if (pos != 1)
+                    Console.WriteLine("Position out of range");
+            }
+            Console.WriteLine("Inserted value is: " + data);
+            return top;
+        }
     }
 }

@@ -9,21 +9,15 @@ namespace LinkedList
             Console.WriteLine("Welcome to Linked List Demo!");
             LinkedList list = new LinkedList();
 
-            //UC1
-            list.Add(70);
-            list.Add(30);
+            
+            //UC4
             list.Add(56);
+            list.Add(89);
+            list.Add(43);
             list.Display();
-            Console.WriteLine("\n");
-
-            //UC3
-            list.Append(56);
-            list.Append(30);
-            list.Append(70);
+            Console.WriteLine("\nAfter insertion " );
+            list.InsertAtGivenPos(2, 30);
             list.Display();
-            //Console.WriteLine("After insertion " + list.InsertAtGivenPos(2, 30));
-            //list.Display();
-
         }
     }
 }
