@@ -116,5 +116,15 @@ namespace LinkedList
             }
             NewNode.next = null;
         }
+        internal bool Search(int value)
+        {
+            while(this.top !=null)
+            {
+                if (this.top.data == value)
+                    return true;
+                this.top = this.top.next;
+            }
+            return false ;
+        }
     }
 }

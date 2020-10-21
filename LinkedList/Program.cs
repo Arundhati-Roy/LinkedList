@@ -26,6 +26,17 @@ namespace LinkedList
             //UC6
             list.PopLast();
             list.Display();
+
+            //UC7
+            list.Append(54);
+            list.Append(23);
+            list.Display();
+            Console.WriteLine("\nElement to be searched: ");
+            int r = Convert.ToInt32(Console.ReadLine());
+            if (list.Search(r))
+                Console.WriteLine("\nElement found at: " + list.Search(r));
+            else
+                Console.WriteLine("Element not in Linked List");
         }
     }
 }
