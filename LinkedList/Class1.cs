@@ -185,5 +185,30 @@ namespace LinkedList
             prev.next = temp.next;
             return count();
         }
+        internal void sortedInsert(int val)
+        {
+            Node new_node = new Node(val);
+            if (this.top == null)
+            {
+                this.top = new_node;
+            }
+            else if (this.top.data > new_node.data)
+            {
+                new_node.next = this.top;
+                this.top = new_node;
+            }
+
+            else
+            {
+                Node temp = this.top;
+                while (temp.next != null && temp.next.data < new_node.data)
+                {
+                    temp = temp.next;
+                }
+                new_node.next = temp.next;
+                temp.next = new_node;
+            }
+            Console.WriteLine("{0} is appended into Linked list", new_node.data);
+        }
     }
 }
