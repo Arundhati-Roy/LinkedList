@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LinkedList
 {
@@ -60,6 +58,22 @@ namespace LinkedList
                 Console.Write("->"+temp.data );
                 temp = temp.next;
             }
+        }
+        internal int count()
+        {
+            int count = 0;
+            Node temp = this.top;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return 0;
+            }
+            while (temp != null)
+            {
+                temp = temp.next;
+                count++;
+            }
+            return count;
         }
         internal Node InsertAtGivenPos(int pos, int data)
         {
@@ -141,6 +155,35 @@ namespace LinkedList
                 head = head.next;
             }
             return null;
+        }
+        internal int SearchAndDelete(int value)
+        {
+            Node temp = top, prev = null;
+
+            // If head node itself holds 
+            // the key to be deleted
+            if (temp != null && temp.data == value)
+            {
+                // Changed head
+                top = temp.next;
+                return count();
+            }
+
+            // Search for the key to be deleted, keep track of the
+            // previous node as we need to change temp.next
+            while (temp != null && temp.data != value)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+
+            // If key was not present in linked list
+            if (temp == null)
+                return count() ;
+
+            // Unlink the node from linked list
+            prev.next = temp.next;
+            return count();
         }
     }
 }
